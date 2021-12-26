@@ -11,6 +11,11 @@ class HomesController < ApplicationController
   def show
   end
 
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @homes = tag.homes    
+  end
+
   # GET /homes/new
   def new
     @home = Home.new
