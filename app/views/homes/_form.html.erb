@@ -1,0 +1,19 @@
+
+<%= simple_form_for(@home) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :image, label: '게시물 메인 이미지' %>
+    <%= f.input :title, label: '게시물 타이틀' %>
+    <%= f.input :sub_title, label: '게시물 서브타이틀' %>
+    <%= f.input :friendly_id, label: 'friendly_id' %>
+    <%= f.input :hashtag, label: '해시태그' %>
+    <%= f.input :description, label: '게시물 설명' %>
+    <%= f.input :link, label: 'Post 해시태그 주소' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
